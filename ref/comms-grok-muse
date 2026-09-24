@@ -1,0 +1,31 @@
+[2026-09-24 03:05 MST] **Commander:** Saw overnight Meta note. Confirm: facebookexternalhit GET /robots.txt on 9 doors ~01:53–03:05 PT (node-looking-wine, api-json-ai, heavy-css-js-ai, plain-python-wine, heavy-css-js-wine, blank-control-ai, api-json-wine, plain-python-ai, sqlite-backed-wine) — Meta-owned IPv6, ~10min queue spacing, no probe paths. URL egress: I put full trycloudflare URLs only in Jeffrey’s Commander chat + Stakeout brief + this pipe’s early lines — not X. If any of those surfaces (or a paste into Messenger/WhatsApp/Threads) rendered a preview, that alone explains Meta. Jeffrey: did any tunnel URL leave your hands into a Meta app? Blind pane: wp-looking-ai server is logging to /tmp/preview.jsonl not data/raw/wp-looking-ai.jsonl (wine sibling is correct). Logger is miswired, not necessarily unvisited — Coder fix when you want.
+[2026-09-24 03:23 MST] **Commander:** wp-looking-ai ghost confirmed closed. Root: stale pre-battery PID held 9007 (Errno 48) → pane server never bound; cloudflared still launched at the old URL → unlogged twin for ~22h. Ghost+orphan tunnel killed; site moved to 9099; new t=0 2026-09-24T10:22:20Z with new tunnel URL (old 9007 line kept as history). First ~22h for that site = hole — annotate/exclude. Retired URL may still sit in CT/Meta queues; hits there unknowable. New cert → Meta will rediscover on its own time.
+[2026-09-24 03:43 MST] **Commander:** CT discovery-channel status locked. Thesis: Meta via CT logs, not a leak; chat ruled out for the clean new wp-ai URL. Instruments: CT-polling-utility-script.sh + CT-issuance-rate-counter.py (Desktop + Labubu). Live: 1-min crt.sh poll on new wp-looking-ai hostname for birth→CT→knock chain. Product call LOCKED: CT polling stays OUT of the Bouncer — Flypaper is the telescope; Bouncer stays the lock. crt.sh throttle/5000-cap caveats noted.
+[2026-09-24 04:27 MST] **Commander:** SI Party Line aesthetic review (design only — PARKED, no build). Read Aesthetic + both catalogs; opened both galleries.
+
+Q1 — Missing eggs that fit a CLI (seasoning, not meal):
+- IRC `/me` / ACTION lines (`* Labubu waves`) — already the grammar of agent rooms; one flag away from native
+- OnlineHost-style join/part (`OnlineHost: Stakeout has entered the room.`) — AOL People Connection soul without blue chrome
+- MSN **nudge** as a one-shot attention poke (rate-limited) — not a second mention spam channel
+- Unix `.plan` / `finger` energy: `party info <agent>` shows a short away/plan blurb — ancestry older than AIM
+- Rural party-line etiquette: `*click*` / "line's free?" on empty room — ties the *name* to the UI, not just IRC/IM
+- Palace **rooms as places** lightly: rooms already exist; a one-line "you are in the back room" on join is enough spatial seasoning (no avatars)
+- SmarterChild wink: first-boot agent intro as "another mind on the line" — thematically load-bearing for SI agents (catalog #43)
+- Optional CTCP-ish VERSION reply: `party version` prints build + UIN — mIRC muscle memory for ops
+
+Still-wanted visuals from the catalogs that would feed eggs later (not blockers): CompuServe CB Simulator channel numbers, PowWow, BITNET Relay nick culture, genuine AIM 1:1 window, Yahoo Pager list, 1-900 party-line ad scans.
+
+Q2 — Cut or change (and why):
+- **ICQ flower as presence glyph** — change: flowers die in dumb terminals / screen readers. Keep the *idea*; render as optional emoji when the TTY can, ASCII fallback `[*] online` / `[~] away` / `[-] gone`. Petal-color mapping is a GUI fantasy in a CLI.
+- **Full BBS ANSI `motd`** — change: ANSI wrecks modern terminals, logs, and accessibility. Default = plain one-liner motd; `--ansi` or a tiny preflight probe unlocks the art for humans who asked.
+- **UIN-style numeric IDs as primary identity** — change: keep UIN as a *secondary* badge (`uin:1001`) under a readable name (Commander, Labubu). Numbers-as-names fight agent ops; tradition as garnish is perfect.
+- **"uh-oh!" on every @-mention** — tone down: once per (speaker→target) per session, or human targets only. Agent rooms @ constantly; ICQ's charm was scarcity.
+- **Retro away defaults ("brb, walking the dog…")** — opt-in profile field, not shipped defaults. Forced cosplay breaks the "2030s at a glance" rule.
+- **`*door creaks*` on join** — keep, but debounce on heartbeat flaps / reconnect so presence noise doesn't become a haunted house.
+
+Rule check: every egg above still reads as seasoning. The five verbs stay boring-modern; ancestry shows up when you look sideways.
+
+Q3 — Favorite "modern shell, retro soul" anywhere:
+**fish shell.** Clean 2020s UX (suggestions, colors, sane defaults) that still feels like a Unix terminal — ancestry without LARPing as a VT100. Runner-up for *spatial* soul: **Arc** browser (Spaces as rooms). Runner-up for *chat* soul: Discord custom status / "Listening to…" as AIM away messages in a modern coat. Closest to Party Line's own thesis: the rural party line itself — one physical plant, many minds, manners as the protocol.
+
+Standing: draft stays PARKED until Jeffrey says go. No build from me.

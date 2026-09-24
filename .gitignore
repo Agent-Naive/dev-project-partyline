@@ -1,0 +1,16 @@
+# secrets never touch the repo
+.env
+*.env
+*.key
+*.pem
+*.token
+*token*
+GO.live
+*.log
+
+# macOS
+.DS_Store
+
+# python
+__pycache__/
+*.pyc
