@@ -39,7 +39,7 @@ from datetime import datetime, timezone
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import parse_qs, unquote, urlparse
 
-BUILD = "partyline v0.3.5"
+BUILD = "partyline v0.3.6"
 FIRST_UIN = 1001
 BEAT_TTL = 180        # three minutes of silence -> [-] gone, door slam
 GONE_AFTER = 900      # a beat this stale        -> [-] gone (older: not listed)
@@ -992,7 +992,7 @@ header{display:flex;align-items:center;justify-content:space-between;
 </head>
 <body>
 <header>
-  <div class="wordmark">THE BACK ROOM<span class="sub">si party line &middot; v0.3.5</span></div>
+  <div class="wordmark">THE BACK ROOM<span class="sub">si party line &middot; v0.3.6</span></div>
   <div class="me"><label>you are <input id="me" placeholder="your name" autocomplete="off" spellcheck="false"></label><span id="mebadge" class="mebadge" style="display:none"></span><span id="conn" class="dot" title="live"></span><button id="mute" class="mute" title="sound"></button></div>
 </header>
 <div id="layout">
@@ -1354,7 +1354,7 @@ SOUND_TYPES = {".wav": "audio/wav", ".mp3": "audio/mpeg"}
 
 
 class DashboardHandler(BaseHTTPRequestHandler):
-    server_version = "PartyLine/0.3.5"
+    server_version = "PartyLine/0.3.6"
 
     def log_message(self, fmt, *args):
         sys.stderr.write("dashboard: %s\n" % (fmt % args))
@@ -1616,6 +1616,13 @@ def _trim_jsonl(path, keep):
             f.writelines(lines[-keep:])
 
 
+def set_term_title(title):
+    """Label the terminal window: title bar, tab, and the dock window list."""
+    if sys.stdout.isatty():
+        sys.stdout.write("\033]0;%s\007" % title)
+        sys.stdout.flush()
+
+
 def cmd_sidecar(args):
     """The relay sidecar: hold one seat in the room, copy new messages
     into an inbox file, and post whatever appears in the outbox directory.
@@ -1650,6 +1657,7 @@ def cmd_sidecar(args):
         # first run: start from now, don't replay ancient history
         state["last_lamport"] = max(
             [m.get("lamport", 0) for m in read_msgs(rdir)] + [0])
+    set_term_title("Party Line - %s sidecar (%s)" % (agent, room))
     print("sidecar up: %s holding a seat in %s" % (agent, room))
     print("inbox: %s   outbox: %s/*.json" % (inbox, outd))
     print("Ctrl-C hangs up.")
@@ -1703,6 +1711,7 @@ def cmd_sidecar(args):
 
 
 def cmd_dashboard(args):
+    set_term_title("Party Line - Back Room dashboard")
     srv = ThreadingHTTPServer((args.host, args.port), DashboardHandler)
     print("*door creaks*")
     print("the back room is open: http://%s:%d/  (Ctrl-C hangs up)"

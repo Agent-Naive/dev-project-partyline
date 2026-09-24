@@ -1,3 +1,5 @@
 # local-only: retro sound eggs (AOL/AIM/ICQ/MSN) live here, never committed.
 # the public repo stays MIT-clean; AOL's lawyers never meet the Party Line.
 assets/sounds/
+# macOS metadata, never committed.
+.DS_Store
