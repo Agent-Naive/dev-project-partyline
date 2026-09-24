@@ -2,7 +2,7 @@
 
 Parked project: no servers, tunnels, or processes exist yet. No kill runlines needed — nothing runs.
 
-Subagent tag chain: none used yet. When the first subagent is spawned, define the tag chain here (or in `docs/`) and reference it everywhere — no tag drift.
+Subagent tag chain (2026-09-24): `::design^3::concise^2::!build/` — saved as preset `partyline` (`::@save::partyline/`). Session open: `::@preset::partyline/`, then `::@effort::4/`, then `::@safe/on/`. Reference everywhere — no tag drift. The `!build` encodes the parked doctrine: design and docs only.
 
 ---
 
@@ -23,3 +23,13 @@ cd ~/dev-project-partyline/assets && curl -sL -o party-line-flavor-a.png "https:
 ```
 cd ~/dev-project-partyline && git init && git add -A && git commit -m "scaffold: party line pre-project (docs, assets, ref)"
 ```
+
+---
+
+## Public repo (MIT) — commit & push
+
+```
+cd /Users/agent-naive/dev-project-partyline && git add -A && git commit -m "<message>" && git push
+```
+
+The scaffold section above stays as history.

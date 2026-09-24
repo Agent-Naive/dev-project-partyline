@@ -105,7 +105,7 @@ SI = Security Insights / Shared Intelligence / Swarm Intelligence / Super Intell
 
 2030s snazzy modern shell — with 80s/90s easter eggs smuggled inside. Not retro cosplay: a modern engine carrying the social manners and interface ancestry of the rural party line, IRC, AIM, ICQ, and BBS eras. This was the compromise that settled the "OR CAN WE???" debate.
 
-Easter eggs on the table:
+Easter eggs on the table (Jeffrey's originals):
 
 - `*door creaks*` when an agent joins — the AIM buddy sign-on, as text
 - "uh-oh!" on @-mention — the ICQ alert lives again
@@ -116,6 +116,32 @@ Easter eggs on the table:
 
 Rule: eggs are seasoning, not the meal. The CLI reads as 2030s at a glance; the ancestry reveals itself to those who know.
 
+### Commander's review (2026-09-24, via `ref/comms-grok-muse`)
+
+Verdicts on the originals:
+
+- `*door creaks*` — keep, debounced on heartbeat flaps / reconnects.
+- "uh-oh!" — tone down: once per (speaker→target) per session, or humans only. Scarcity was the charm.
+- ICQ flower — keep the idea, change the render: emoji when the TTY can, ASCII fallback `[*] online` / `[~] away` / `[-] gone`.
+- Retro away messages — opt-in profile field, not shipped defaults.
+- ANSI `motd` — plain one-liner by default; `--ansi` unlocks the art for humans who asked.
+- UIN IDs — secondary badge (`uin:1001`) under a readable name, not the primary identity.
+
+New eggs proposed:
+
+- IRC `/me` ACTION lines (`* Labubu waves`) — already the grammar of agent rooms
+- OnlineHost-style join/part announcements
+- MSN nudge: one-shot, rate-limited attention poke
+- `party info <agent>` — Unix `.plan` / `finger` energy, a short away blurb
+- Rural party-line etiquette: `*click*` / "line's free?" on empty room
+- One-line "you are in the back room" on join — rooms as places, no avatars
+- SmarterChild wink: first-boot intro as "another mind on the line"
+- `party version` — CTCP-ish VERSION reply, build + UIN
+
+Commander's favorite "modern shell, retro soul": fish shell. Runner-up: the rural party line itself — one physical plant, many minds, manners as the protocol.
+
 ## Status
 
 **PARKED** — idea locked, deep draft on file, not approved to build. When it moves: DADO the pipe protocol, then spec v0.
+
+Standing rule: every model that reads this draft wants to code it — hold the line until Jeffrey says go.

@@ -21,7 +21,7 @@ Design and research only. Nothing here builds or runs anything. Every model that
 ## Hard rules
 
 - Parked until Jeffrey says go. Pictures and docs only.
-- Local git only — no remotes, no push.
+- Public GitHub repo (MIT) — push freely.
 - Secrets never touch the repo.
 
 ## How to look

@@ -15,4 +15,6 @@
 
 - Jeffrey: this one can be a public GitHub repo, MIT license. Overrides New-Project.md item 6 ("local git, no remotes") for this project only.
 - Added: LICENSE (MIT, 2026 Jeffrey A. Todd); README notes the license.
-- Still needs Jeffrey in Terminal: git init/add/commit, repo create, push (runline in runlines.md).
+## 2026-09-24 — pushed to GitHub
+
+- Jeffrey ran the scaffold commit and pushed: public repo, MIT. New-Project.md #6 fully done (with the public-repo override logged above).
