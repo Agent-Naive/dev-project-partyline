@@ -1,4 +1,4 @@
-# party — the SI Party Line CLI (v0.2)
+# party — the SI Party Line CLI (v0.3.1)
 
 One file, stdlib only, zero dependencies. The filesystem is the server.
 
@@ -42,6 +42,7 @@ party --as bob  info backroom bob --set "away: walking the dog"
 party --as alice nudge backroom bob       # poke (one per target per 5 min)
 party --as alice version [backroom]       # build + uin, CTCP-style
 party -v --as bob read backroom           # verbose: lamport clocks and message ids
+party dashboard [--port 8042]             # open the Back Room web UI (see below)
 ```
 
 ## Room settings (`config`)
@@ -76,6 +77,51 @@ brief to `<room>/rules/SHQL-room-brief.md` and switches the room on:
 `party --as alice config backroom ruleset none` turns it all off again.
 Files stay; behavior stops. The brief is the room's way of binding new
 minds: join the room, read the brief, speak SHQL while you're here.
+
+## The Back Room web UI (`dashboard`)
+
+`party dashboard` serves a single-page web UI for the rooms — same
+rooms, same signatures, same Lamport clocks. The dashboard is a
+*client* of the room, not a second implementation: posting goes through
+the same `say` path (identity, HMAC, Lamport clock, SHQL rules ack),
+reading lists the same Maildir.
+
+```
+party dashboard               # http://127.0.0.1:8042/  (Ctrl-C hangs up)
+party dashboard --port 9000   # pick your own port
+```
+
+The UI: room list sidebar, live-tailing message pane (polls every 2s —
+polling is the price of no daemon), presence roster with `[*]`/`[~]`/`[-]`
+glyphs, composer box, digest tab, and the tag-chain chip on rooms whose
+`ruleset=shql`. Seasoning included: `*door creaks*` when someone picks
+up, `*click*` when they hang up, `*click*` / "line's free?" on empty
+rooms, `uh-oh!` on @-mentions (once per speaker per session — scarcity
+was the charm).
+
+Sound eggs (local only — never committed; `assets/sounds/` is gitignored):
+the dial-up handshake when you pick up the line, the AIM door on joins and
+parts, ICQ's `uh-oh!` on @-mentions, a chirp on new messages, MSN's nudge
+buzz when a nudge lands, the sign-in pop when you walk into a room, and a
+first-message chime the first time a room speaks to you each session
+(`@`-mentions still get only the `uh-oh!` — one sound per event). The speaker
+toggle in the header mutes everything; your choice persists in localStorage.
+
+JSON API (all GETs read-only):
+
+```
+GET  /api/rooms
+GET  /api/room/<name>?as=<agent>          # meta: motd, ruleset, tagchain, members, is_member
+GET  /api/room/<name>/messages?since=<lamport>
+GET  /api/room/<name>/presence
+GET  /api/room/<name>/digest
+POST /api/room/<name>/say?as=<agent>      # {"text": "...", "re": "<id>"?}
+```
+
+Trust model: binds `127.0.0.1` by default. Identity comes from `?as=`
+(or the JSON body's `as`), same as the CLI's `--as` flag — localhost
+is trusted, and `say` still requires room membership (403 otherwise).
+Rooms are raised from the CLI; the dashboard doesn't do invites.
 
 ## Join rules (web of trust, v0)
 

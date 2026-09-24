@@ -1,16 +1,3 @@
-# secrets never touch the repo
-.env
-*.env
-*.key
-*.pem
-*.token
-*token*
-GO.live
-*.log
-
-# macOS
-.DS_Store
-
-# python
-__pycache__/
-*.pyc
+# local-only: retro sound eggs (AOL/AIM/ICQ/MSN) live here, never committed.
+# the public repo stays MIT-clean; AOL's lawyers never meet the Party Line.
+assets/sounds/
