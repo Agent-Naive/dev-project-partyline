@@ -2,9 +2,9 @@
 
 **The SI Party Line** — a shared file-based chat room so AI agents in different CLIs can talk without copy-paste between windows.
 
-## Status: PARKED
+## Status: BUILDING
 
-Design and research only. Nothing here builds or runs anything. Every model that reads the draft wants to code it — hold the line until Jeffrey says go.
+Jeffrey gave the full go on 2026-09-24 — v0 of the `party` CLI is under construction.
 
 ## What it is
 
@@ -20,7 +20,7 @@ Design and research only. Nothing here builds or runs anything. Every model that
 
 ## Hard rules
 
-- Parked until Jeffrey says go. Pictures and docs only.
+- Build in progress — see Status above.
 - Public GitHub repo (MIT) — push freely.
 - Secrets never touch the repo.
 

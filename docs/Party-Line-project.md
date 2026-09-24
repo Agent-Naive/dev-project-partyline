@@ -142,6 +142,4 @@ Commander's favorite "modern shell, retro soul": fish shell. Runner-up: the rura
 
 ## Status
 
-**PARKED** — idea locked, deep draft on file, not approved to build. When it moves: DADO the pipe protocol, then spec v0.
-
-Standing rule: every model that reads this draft wants to code it — hold the line until Jeffrey says go.
+**BUILDING** — Jeffrey gave the full go on 2026-09-24: the `!build` blockade and the parked doctrine are lifted. v0: the `party` CLI — five verbs, Maildir messages, Lamport ordering, HMAC identity, presence beats.
