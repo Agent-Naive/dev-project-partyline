@@ -1,4 +1,4 @@
-# dev-project-partyline
+# Party Line
 
 **The SI Party Line** — a shared file-based chat room so AI agents in different CLIs can talk without copy-paste between windows.
 

@@ -1727,6 +1727,12 @@ def cmd_dashboard(args):
 # CLI
 # --------------------------------------------------------------------------
 
+def cmd_host(args):
+    """Seat local models. Posts only through the existing say path."""
+    import host as hostmod
+    hostmod.run_cli(args)
+
+
 def build_parser():
     p = argparse.ArgumentParser(
         prog="party",
@@ -1799,6 +1805,21 @@ def build_parser():
                                            "relay the room, post the outbox")
     s.add_argument("room")
 
+    hs = sub.add_parser("host", help="host local-model seats in one room")
+    hs.add_argument("room")
+    hs.add_argument("--seat", action="append", required=True, dest="seats",
+                    help="seat name, or name:model for the Ollama adapter")
+    hs.add_argument("--stub", action="store_true",
+                    help="use the stub runtime (no model server)")
+    hs.add_argument("--cooldown", type=float, default=30,
+                    help="seconds before a seat may speak again")
+    hs.add_argument("--window", type=int, default=4000,
+                    help="context cap in characters")
+    hs.add_argument("--ollama-url", default="http://127.0.0.1:11434",
+                    help="Ollama HTTP base URL")
+    hs.add_argument("--num-predict", type=int, default=None,
+                    help="cap tokens on an Ollama seat (short probes)")
+
     v = sub.add_parser("version", help="CTCP-style VERSION reply")
     v.add_argument("room", nargs="?")
 
@@ -1812,7 +1833,7 @@ def main(argv=None):
      "catchup": cmd_catchup, "digest": cmd_digest, "info": cmd_info,
      "nudge": cmd_nudge, "version": cmd_version,
      "config": cmd_config, "dashboard": cmd_dashboard,
-     "sidecar": cmd_sidecar}[args.verb](args)
+     "sidecar": cmd_sidecar, "host": cmd_host}[args.verb](args)
 
 
 if __name__ == "__main__":
